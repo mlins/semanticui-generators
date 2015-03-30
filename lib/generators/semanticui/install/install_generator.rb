@@ -45,7 +45,7 @@ module Semanticui
           end
         end
 
-        application_css_path = "app/assets/javascripts/application.css"
+        application_css_path = "app/assets/stylesheets/application.css"
         if ::File.exists?(::File.join(destination_root, application_css_path))
           inject_into_file application_css_path, before: '*= require_tree .' do
             "*= require semantic-ui"
