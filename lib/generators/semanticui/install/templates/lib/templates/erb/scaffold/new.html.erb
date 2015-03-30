@@ -1,0 +1,19 @@
+<div class="ui stackable grid">
+  <div class="two wide column">
+  </div>
+  <div class="center aligned twelve wide title column">
+    <h2>
+      Adding <%= singular_table_name.titleize %>
+    </h2>
+  </div>
+  <div class="two wide column">
+  </div>
+</div>
+
+<div class="ui breadcrumb">
+  <%%= link_to '<%= plural_table_name.titleize %>', <%= index_helper %>_path, class: 'section' %>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">New</div>
+</div>
+
+<%%= render 'form' %>

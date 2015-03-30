@@ -1,0 +1,48 @@
+<div class="ui stackable grid">
+  <div class="two wide column">
+  </div>
+  <div class="center aligned twelve wide title column">
+    <h2>
+      <%= plural_table_name.titleize %>
+    </h2>
+  </div>
+  <div class="right aligned two wide column">
+    <%%= link_to 'New', new_<%= singular_table_name %>_path, class: 'ui tiny fluid green button' %>
+  </div>
+</div>
+
+<%% if !@<%= plural_table_name %>.empty? %>
+  <table class="ui striped table">
+    <thead>
+      <tr>
+        <% attributes.each do |attribute| -%>
+          <th><%= attribute.human_name %></th>
+        <% end -%>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
+        <% attributes.first(3).each do |attribute| -%>
+          <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+        <% end -%>
+        <td class="right aligned">
+          <span class="ui icon buttons">
+            <%%= link_to <%= singular_table_name %>, class: 'ui button' do %>
+              <i class="icon folder open"></i>
+            <%% end %>
+            <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'ui button' do %>
+              <i class="icon edit"></i>
+            <%% end %>
+            <%%= link_to <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui button' do %>
+              <i class="icon remove"></i>
+            <%% end %>
+          </span>
+        </td>
+      <%% end %>
+    </tbody>
+  </table>
+<%% else %>
+  <div class="ui message">No <%= plural_table_name %> to display.</div>
+<%% end %>

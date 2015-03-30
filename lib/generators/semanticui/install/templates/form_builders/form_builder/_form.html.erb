@@ -1,0 +1,25 @@
+<%%= form_for(@<%= singular_table_name %>, html: { class: "ui form" }) do |f| %>
+  <%% if @<%= singular_table_name %>.errors.any? %>
+    <div class="ui message negative">
+      <div class="header">
+        <%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:
+      </div>
+
+      <ul class="list">
+      <%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
+        <li><%%= msg %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+<div class="ui secondary segment">
+  <% attributes.each do |attribute| -%>
+    <div class="field">
+      <%%= f.label :<%= attribute.name %> %>
+      <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+    </div>
+  <% end -%>
+  <%%= f.submit class: "ui submit blue button" %>
+  <%% end %>
+</div>
