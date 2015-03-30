@@ -31,6 +31,9 @@ module Semanticui
       def add_semanticui_gem
         add_source "https://rails-assets.org"
         gem "rails-assets-semantic-ui"
+        Bundler.with_clean_env do
+          run 'bundle install'
+        end
       end
 
       def inject_semanticui_requires
