@@ -9,6 +9,7 @@ Installs [SemanticUI](http://semantic-ui.com/) via [RailsAssets] (https://rails-
 ## Give it a try
 
 `rails generate semanticui:install`
+
 `rails generate scaffold post title body:text published:boolean`
 
 ## Credits
