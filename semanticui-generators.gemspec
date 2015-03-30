@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mattlins@gmail.com"]
   spec.summary       = %q{SemanticUI generators for Rails}
   spec.description   = %q{SemanticUI Generators provides SemanticUI generators for Rails 4 (supported Rails >= 3.1)}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/mlins/semanticui-generators"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
