@@ -8,9 +8,23 @@ Installs [SemanticUI](http://semantic-ui.com/) via [RailsAssets] (https://rails-
 
 ## Give it a try
 
+Add this to your Gemfile:
+
+`gem 'semanticui-generators'`
+
+Then run these commands:
+
+`bundle`
+
 `rails generate semanticui:install`
 
 `rails generate scaffold post title body:text published:boolean`
+
+`rake db:migrate`
+
+`rails server`
+
+Go to: `http://localhost:3000/posts`
 
 ## Credits
 
