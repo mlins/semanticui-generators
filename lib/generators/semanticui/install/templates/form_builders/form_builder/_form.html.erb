@@ -13,13 +13,13 @@
     </div>
   <%% end %>
 
-<div class="ui secondary segment">
-  <% attributes.each do |attribute| -%>
-    <div class="field">
-      <%%= f.label :<%= attribute.name %> %>
-      <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-    </div>
-  <% end -%>
-  <%%= f.submit class: "ui submit blue button" %>
-  <%% end %>
-</div>
+  <div class="ui secondary segment">
+    <% attributes.each do |attribute| -%>
+      <div class="field">
+        <%%= f.label :<%= attribute.name %> %>
+        <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+      </div>
+    <% end -%>
+    <%%= f.submit class: "ui submit blue button" %>
+  </div>
+<%% end %>
