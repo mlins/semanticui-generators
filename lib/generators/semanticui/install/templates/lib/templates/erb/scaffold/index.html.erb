@@ -15,7 +15,7 @@
   <table class="ui striped table">
     <thead>
       <tr>
-        <% attributes.each do |attribute| -%>
+        <% attributes.first(3).each do |attribute| -%>
           <th><%= attribute.human_name %></th>
         <% end -%>
         <th></th>
