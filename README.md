@@ -1,6 +1,6 @@
 # SemanticUI Generators
 
-semanticui-generators provides [SemanticUI](http://semantic-ui.com/) scaffold generators for Rails 4 (supported Rails >= 3.1).
+semanticui-generators provides [SemanticUI](http://semantic-ui.com/) scaffold generators for Rails 5 (supported Rails >= 3.1).
 
 ## Screenshots
 
@@ -10,7 +10,7 @@ semanticui-generators provides [SemanticUI](http://semantic-ui.com/) scaffold ge
 
 ## SemanticUI Installation
 
-Installs [SemanticUI](http://semantic-ui.com/) via [RailsAssets] (https://rails-assets.org/).
+Installs [SemanticUI](http://semantic-ui.com/) via [Semantic-UI-Rails-LESS](https://github.com/Semantic-Org/Semantic-UI-Rails-LESS)
 
 ## Give it a try
 

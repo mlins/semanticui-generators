@@ -6,8 +6,6 @@ module Semanticui
       desc 'Copy SemanticUI Generators default files'
       source_root ::File.expand_path('../templates', __FILE__)
 
-      class_option :skip_turbolinks, type: :boolean, default: false, desc: "Skip Turbolinks on assets"
-
       def copy_lib
         directory "lib/templates/erb"
       end
@@ -29,18 +27,22 @@ module Semanticui
       end
 
       def add_semanticui_gem
-        add_source "https://rails-assets.org"
-        gem "rails-assets-semantic-ui"
+        gem "less-rails"
+        gem "less-rails-semantic_ui"
+        gem "autoprefixer-rails"
+
         Bundler.with_clean_env do
           run 'bundle install'
         end
+
+        generate "semantic_ui:install"
       end
 
       def inject_semanticui_requires
         application_js_path = "app/assets/javascripts/application.js"
         if ::File.exists?(::File.join(destination_root, application_js_path))
           inject_into_file application_js_path, before: "//= require_tree" do
-            "//= require semantic-ui\n" +
+            "//= require semantic_ui/semantic_ui\n" +
             "//= require semanticui-scaffold\n"
           end
         end
@@ -48,7 +50,7 @@ module Semanticui
         application_css_path = "app/assets/stylesheets/application.css"
         if ::File.exists?(::File.join(destination_root, application_css_path))
           inject_into_file application_css_path, before: '*= require_tree .' do
-            "*= require semantic-ui\n"
+            "*= require semantic_ui/semantic_ui\n"
           end
         end
       end

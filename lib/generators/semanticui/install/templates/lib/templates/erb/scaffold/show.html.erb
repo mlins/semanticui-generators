@@ -1,34 +1,40 @@
 <div class="ui stackable grid">
-  <div class="four wide column">
+  <div class="row">
+    <div class="four wide column">
+    </div>
+    <div class="center aligned eight wide title column">
+      <h2>
+        Showing <%= singular_table_name.titleize %>
+      </h2>
+    </div>
+    <div class="right aligned two wide column">
+      <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'ui tiny fluid orange button' %>
+    </div>
+    <div class="right aligned two wide column">
+      <%%= link_to 'Destroy', <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui tiny fluid red button' %>
+    </div>
   </div>
-  <div class="center aligned eight wide title column">
-    <h2>
-      Showing <%= singular_table_name.titleize %>
-    </h2>
-  </div>
-  <div class="right aligned two wide column">
-    <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'ui tiny fluid orange button' %>
-  </div>
-  <div class="right aligned two wide column">
-    <%%= link_to 'Destroy', <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui tiny fluid red button' %>
-  </div>
-</div>
-
-<div class="ui breadcrumb">
-  <%%= link_to '<%= plural_table_name.titleize %>', <%= index_helper %>_path, class: 'section' %>
-  <i class="right chevron icon divider"></i>
-  <div class="active section">Show</div>
-</div>
-
-<div class="ui secondary segment">
-  <div class="ui list">
-    <%- attributes.each do |attribute| -%>
-      <div class="item">
-        <div class="header">
-          <%= attribute.human_name %>:
-        </div>
-        <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+  <div class="one column row">
+    <div class="column">
+      <div class="ui breadcrumb">
+        <%%= link_to '<%= plural_table_name.titleize %>', <%= index_helper %>_path, class: 'section' %>
+        <i class="right chevron icon divider"></i>
+        <div class="active section">Show</div>
       </div>
-    <%- end -%>
+
+      <div class="ui secondary segment">
+        <div class="ui list">
+          <%- attributes.each do |attribute| -%>
+            <div class="item">
+              <div class="header">
+                <%= attribute.human_name %>:
+              </div>
+              <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+            </div>
+          <%- end -%>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
