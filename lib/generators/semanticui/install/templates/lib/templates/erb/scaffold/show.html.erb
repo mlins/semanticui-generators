@@ -11,7 +11,7 @@
       <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'ui tiny fluid orange button' %>
     </div>
     <div class="right aligned two wide column">
-      <%%= link_to 'Destroy', <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui tiny fluid red button' %>
+      <%%= link_to 'Destroy', <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui tiny fluid red button' %>
     </div>
   </div>
   <div class="one column row">

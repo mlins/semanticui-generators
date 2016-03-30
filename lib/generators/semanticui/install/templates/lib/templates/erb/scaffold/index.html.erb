@@ -38,7 +38,7 @@
                 <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'ui button' do %>
                   <i class="icon edit"></i>
                 <%% end %>
-                <%%= link_to <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui button' do %>
+                <%%= link_to <%= singular_table_name %>, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'ui button' do %>
                   <i class="icon remove"></i>
                 <%% end %>
               </span>
